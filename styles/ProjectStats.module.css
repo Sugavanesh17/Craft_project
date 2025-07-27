@@ -1,0 +1,65 @@
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem auto 2.5rem auto;
+  max-width: 900px;
+  padding: 0 1rem;
+}
+.card {
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 8px 0 rgba(220, 180, 255, 0.10);
+  padding: 1.5rem 1rem 1.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.18s, box-shadow 0.18s;
+  cursor: pointer;
+  min-height: 110px;
+  background: #f8f6ff;
+}
+.card.planned {
+  background: #b4e0fe;
+}
+.card.inprogress {
+  background: #ffe0b2;
+}
+.card.completed {
+  background: #c8e6c9;
+}
+.card:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 8px 32px 0 rgba(220, 180, 255, 0.18);
+}
+.count {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+.label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0.01em;
+}
+.loading, .error {
+  grid-column: 1/-1;
+  text-align: center;
+  color: #b983ff;
+  font-size: 1.1em;
+  margin: 2em 0;
+}
+@media (max-width: 600px) {
+  .statsGrid {
+    gap: 0.7rem;
+    padding: 0 0.25rem;
+  }
+  .card {
+    padding: 1rem 0.5rem 0.7rem 0.5rem;
+    min-height: 80px;
+  }
+  .count {
+    font-size: 1.5rem;
+  }
+} 
